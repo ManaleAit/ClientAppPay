@@ -64,14 +64,14 @@ export class LoginComponent implements OnInit {
           },
           error => {
             alert("incorrect password");
-            this.notification.showError("incorrect password", "connection fail ");
+            this.notification.showError("Le mot de passe incorrect", "connection échouer ");
             console.log(error);
            
           });
 
 
     } else {
-      this.notification.showWarning("Please fill in the form fields", "Warning!!!!!!!");
+      this.notification.showWarning("Veuillez remplir les champs du formulaire", "Attention!!!!!!!");
 
     }
 

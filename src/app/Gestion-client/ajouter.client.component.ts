@@ -31,10 +31,13 @@ export class AjouterClientComponent implements OnInit {
     tel: new FormControl('', Validators.required),
     amount: new FormControl('', Validators.required),
     accountType: new FormControl('', Validators.required),
+    sexe: new FormControl('', Validators.required),
 
   }
   );
-
+  get sexe() {
+    return this.FormulaireControl.get('sexe');
+  }
   get amount() {
     return this.FormulaireControl.get('amount');
   }
@@ -121,7 +124,7 @@ export class AjouterClientComponent implements OnInit {
       this.resetForm();
 
     } else if (this.send) {
-      this.notification.showWarning("Please fill in the form fields", "Warning!!!!!!!");
+      this.notification.showWarning("Veuillez remplir les champs du formulaire", "Attention!!!!!!!");
     }
 
   }

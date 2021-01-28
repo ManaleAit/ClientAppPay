@@ -8,4 +8,5 @@ export class User{
 	email:string;
     roles:Role[];
     client:Client;
+    sexe:string;
 }
