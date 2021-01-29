@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
         .subscribe(
           (data) => {
 
-
+            localStorage.setItem('tel',this.Formulaire.get('username').value );
             localStorage.setItem('token', data["access_token"]);
             this.router.navigate(['/clients'])
 

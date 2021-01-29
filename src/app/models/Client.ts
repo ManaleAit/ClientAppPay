@@ -2,7 +2,7 @@
 import {Agency} from './Agency';
 import {Account} from './account';
 export class Client{
-	id:any;
+	//id:any;
 	firstName:string;
 	lastName:string;
 	address:string;
@@ -10,5 +10,5 @@ export class Client{
 	email:string;
 	tel:string;
 	account:Account;
-	agency:Agency;
+	//agency:Agency;
 }

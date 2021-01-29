@@ -71,7 +71,7 @@ export class AjouterClientComponent implements OnInit {
   }
 
   save() {
-   /* this.ClientCreate = new Client();
+   this.ClientCreate = new Client();
     this.ClientCreate.firstName = this.FormulaireControl.get('firstName').value;
     this.ClientCreate.lastName = this.FormulaireControl.get('lastName').value;
     this.ClientCreate.address = this.FormulaireControl.get('address').value;
@@ -82,23 +82,21 @@ export class AjouterClientComponent implements OnInit {
     this.ClientCreate.tel = this.FormulaireControl.get('tel').value;
 
     this.accountCreate.amount = this.FormulaireControl.get('amount').value;
-    this.accountCreate.credit = this.FormulaireControl.get('credit').value;
     //pas encore
     this.accountCreate.accountType = this.FormulaireControl.get('accountType').value;
     this.ClientCreate.account = this.accountCreate;
-    this.agencyCreate.name = this.FormulaireControl.get('name').value;
+    //this.agencyCreate.name = this.FormulaireControl.get('name').value;
     //pas encore
-    this.ClientCreate.agency = this.agencyCreate;
-
-
-   this.ServiceClientService.createClient(this.ClientCreate)
+    //this.ClientCreate.agency = this.agencyCreate;
+      console.log("clientttttttttttt ",  this.ClientCreate);
+   this.ServiceClientService.deleteClient(this.ClientCreate)
       .subscribe(
         (data) => {
           console.log("data ", data);
           if(data!=null){
           
 
-          this.notification.showSuccess("le Client est bien ajouté", "customer is added");
+          this.notification.showSuccess("la demande a été bien envoyee", "  Création du client");
 
         }
 
@@ -107,7 +105,7 @@ export class AjouterClientComponent implements OnInit {
         error => {      
           console.log("Error", error);
         }
-      );*/
+      );
   }
 
 
@@ -120,7 +118,7 @@ export class AjouterClientComponent implements OnInit {
 
   onSubmit() {
     if (this.FormulaireControl.valid) {
-      //this.save();
+      this.save();
       this.resetForm();
 
     } else if (this.send) {
@@ -141,6 +139,7 @@ export class AjouterClientComponent implements OnInit {
       tel: '',
       amount: '',
       accountType: '',
+      sexe:'',
     }
     );
     this.send = false;
