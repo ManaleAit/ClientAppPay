@@ -19,11 +19,11 @@ const routes: Routes =[
      component: LoginComponent
   }
   ,{
-    path:'clients',canActivate: [AuthGuard],
+    path:'clients',//canActivate: [AuthGuard],
     component:AfficherClientsComponent
   }
   ,{
-    path:'ajoutClient',canActivate: [AuthGuard],
+    path:'ajoutClient',//canActivate: [AuthGuard],
     component:AjouterClientComponent
   }
 ];

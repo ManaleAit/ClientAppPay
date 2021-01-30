@@ -2,8 +2,6 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { AuthRequest } from '../models/AuthRequest';
-import { Observable } from 'rxjs';
-import { RequestOptions } from '@angular/http/src/base_request_options';
 
 @Injectable()
 export class AuthenticationService   {
@@ -18,8 +16,9 @@ export class AuthenticationService   {
   this.isLoggedIn=true;
 
   var config = {headers: {
-    'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
-    'responseType': 'text' as 'json',
+   'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
+    /*'responseType': 'text' as 'json',
+    'Access-Control-Allow-Origin':'*',*/
     'Authorization': `Basic ${btoa("client:secret")}`}
    
 }

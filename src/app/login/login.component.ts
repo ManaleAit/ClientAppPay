@@ -58,14 +58,15 @@ export class LoginComponent implements OnInit {
 
             localStorage.setItem('tel',this.Formulaire.get('username').value );
             localStorage.setItem('token', data["access_token"]);
+            console.log("tttttooken"+data["access_token"])
             this.router.navigate(['/clients'])
 
 
           },
           error => {
-            alert("incorrect password");
+            //alert("Le mot de passe incorrect");
             this.notification.showError("Le mot de passe incorrect", "connection échouer ");
-            console.log(error);
+            console.log("erreur"+error);
            
           });
 

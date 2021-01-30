@@ -13,7 +13,6 @@ import { Agency } from '../models/Agency';
 })
 export class AjouterClientComponent implements OnInit {
 
-  PhotoUpload: File;
   send: boolean = false;
   ClientCreate: Client = new Client();
   accountCreate: Account = new Account();
@@ -89,7 +88,7 @@ export class AjouterClientComponent implements OnInit {
     //pas encore
     //this.ClientCreate.agency = this.agencyCreate;
       console.log("clientttttttttttt ",  this.ClientCreate);
-   this.ServiceClientService.deleteClient(this.ClientCreate)
+   this.ServiceClientService.demandeCreateClient(this.ClientCreate)
       .subscribe(
         (data) => {
           console.log("data ", data);
