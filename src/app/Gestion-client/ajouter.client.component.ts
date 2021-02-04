@@ -5,7 +5,8 @@ import { NotificationService } from '../Services/service-notifications.service';
 import { Client } from '../models/Client';
 import { Account } from '../models/account';
 import { Agency } from '../models/Agency';
-import { ServiceClientService } from '../Services/service-Client.service';
+import { ClientServiceService } from '../Services/client-service.service';
+
 @Component({
   selector: 'app-ajouter-client',
   templateUrl: './ajouter-client.component.html',
@@ -17,7 +18,7 @@ export class AjouterClientComponent implements OnInit {
   ClientCreate: Client = new Client();
   accountCreate: Account = new Account();
   agencyCreate: Agency = new Agency();
-  constructor(private router: Router, private ServiceClientService: ServiceClientService, private notification: NotificationService) {
+  constructor(private router: Router, private serviceClientService: ClientServiceService, private notification: NotificationService) {
 
   }
 
@@ -85,7 +86,7 @@ export class AjouterClientComponent implements OnInit {
     //pas encore
     //this.ClientCreate.agency = this.agencyCreate;
       console.log("clientttttttttttt ",  this.ClientCreate);
-   this.ServiceClientService.demandeCreateClient(this.ClientCreate)
+   this.serviceClientService.demandeCreateClient(this.ClientCreate)
       .subscribe(
         (data) => {
           console.log("data ", data);

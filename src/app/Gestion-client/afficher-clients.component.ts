@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Account } from '../models/account';
 import { Client } from '../models/Client';
-import { ServiceClientService } from '../Services/service-Client.service';
+import { ClientServiceService } from '../Services/client-service.service';
 import { NotificationService } from '../Services/service-notifications.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class AfficherClientsComponent implements OnInit {
   UpdateSelect:Client=new Client();
   accountCreate:Account=new Account();
   account1:Account=new Account();
-  constructor(private notification:NotificationService,private ServiceClientService: ServiceClientService) {
+  constructor(private notification:NotificationService,private ServiceClientService: ClientServiceService) {
 
   }
 
