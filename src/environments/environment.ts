@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrlAth:'https://ensaspay-zuul-gateway.herokuapp.com/oauth/token',
+  baseUrlClient:'https://ensaspay-zuul-gateway.herokuapp.com/api/client/',
+  baseUrlAccount:'https://ensaspay-zuul-gateway.herokuapp.com/api/account/'
+
 };
 
 /*

@@ -3,14 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from './authentication.service';
 import { Client } from '../models/Client';
+
+import {environment} from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class ClientServiceService {
 
-  private baseUrl = 'https://ensaspay-zuul-gateway.herokuapp.com/api/client/';
+  private baseUrl = environment.baseUrlClient;
   
-  private baseUrl1 ='https://ensaspay-zuul-gateway.herokuapp.com/api/account/'
+  private baseUrl1 =environment.baseUrlAccount;
   constructor(private http: HttpClient,private auth: AuthenticationService) { }
 
   demandeCreateClient(Client: Object): any {
