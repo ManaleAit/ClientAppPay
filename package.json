@@ -2,17 +2,18 @@
   "name": "app-angular",
   "version": "0.0.0",
   "scripts": {
-    "heroku-postbuild": "ng build --prod && npm install -g http-server-spa",
+    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
-    "start": "http-server-spa dist/app-angular index.html 8080",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
   "engines": {
     "node": "13.12.0",
-    "npm": "6.14.6"
+    "npm" : "6.14.6"
   },
   "private": true,
   "dependencies": {
@@ -62,7 +63,7 @@
     "tslib": "^1.10.0",
     "web-animations-js": "^2.3.2",
     "zone.js": "^0.10.3",
-    "typescript": "~3.8.3"
+     "typescript": "~3.8.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.6",
