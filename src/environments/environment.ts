@@ -4,9 +4,6 @@
 
 export const environment = {
   production: false,
-  baseUrlAth:'https://ensaspay-zuul-gateway.herokuapp.com/oauth/token',
-  baseUrlClient:'https://ensaspay-zuul-gateway.herokuapp.com/api/client/',
-  baseUrlAccount:'https://ensaspay-zuul-gateway.herokuapp.com/api/account/'
 
 };
 
