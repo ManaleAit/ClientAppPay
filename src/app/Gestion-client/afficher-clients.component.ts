@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Account } from '../models/account';
-import { Agency } from '../models/Agency';
 import { Client } from '../models/Client';
 import { ServiceClientService } from '../Services/service-Client.service';
 import { NotificationService } from '../Services/service-notifications.service';
