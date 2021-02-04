@@ -2,13 +2,13 @@
   "name": "app-angular",
   "version": "0.0.0",
   "scripts": {
+    "heroku-postbuild": "ng build --prod && npm install -g http-server-spa",
     "ng": "ng",
-    "start": "node server.js",
+    "start": "http-server-spa dist/app-angular index.html 8080",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "e2e": "ng e2e"
   },
   "engines": {
     "node": "13.12.0",
@@ -54,16 +54,15 @@
     "ngx-pagination": "^5.0.0",
     "ngx-toastr": "^13.0.0",
     "ngx-webstorage-service": "^4.1.0",
-    "path": "^0.12.7",
     "perfect-scrollbar": "^1.5.0",
     "popper.js": "^1.14.3",
     "rxjs": "^6.5.5",
     "rxjs-compat": "^6.6.2",
     "table-data": "0.0.2",
     "tslib": "^1.10.0",
-    "typescript": "~3.8.3",
     "web-animations-js": "^2.3.2",
-    "zone.js": "^0.10.3"
+    "zone.js": "^0.10.3",
+    "typescript": "~3.8.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.6",
