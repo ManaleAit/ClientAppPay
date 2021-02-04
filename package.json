@@ -2,14 +2,13 @@
   "name": "app-angular",
   "version": "0.0.0",
   "scripts": {
-    "heroku-postbuild": "ng build --prod",
+    "heroku-postbuild": "ng build --prod && npm install -g http-server-spa",
     "ng": "ng",
-    "start": "node server.js",
+    "start": "http-server-spa dist/app-angular/index.html $PORT",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "e2e": "ng e2e"
   },
   "engines": {
     "node": "13.12.0",
