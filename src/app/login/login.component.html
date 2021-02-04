@@ -12,21 +12,21 @@
                   <h3 class="leftEsp">Authentification</h3>
                   <br><br>
                   <div class="form-group">
-                     <input type="text" class="form-control" placeholder="Numéro de telephone" formControlName="username">
+                     <input type="text" class="form-control" id="username" placeholder="Numéro de telephone" formControlName="username">
       
                      <div *ngIf="send &&  username.invalid" class="text-danger">
                         Numéro de telephone est obligatoire*
                      </div>
                   </div>
                   <div class="form-group">
-                     <input type="password" class="form-control" placeholder="Mode de passe" formControlName="password">
+                     <input type="password" class="form-control" id="password" placeholder="Mode de passe" formControlName="password">
       
                      <div *ngIf="send &&  password.invalid" class="text-danger">
                        le mot de passe est obligatoire*
                      </div>
                   </div>
                   <br><br>
-                  <button type="submit" class="btn colorBut p-3 d-inline w-100 " (click)="SendChange()">Connection</button>
+                  <button type="submit" class="btn colorBut p-3 d-inline w-100 " id="login" (click)="SendChange()">Connection</button>
                </form>
                <p class="colorText">Mot de passe oublie?</p>
             </div>

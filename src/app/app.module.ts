@@ -51,7 +51,7 @@ import { NavbarComponent } from './Navbar/navbar.component';
   ],
   providers: [
    AuthGuard,
-    NotificationService,{ provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    NotificationService,/*{ provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }*/,
     ,AuthenticationService,/*{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}*/
   
   ],

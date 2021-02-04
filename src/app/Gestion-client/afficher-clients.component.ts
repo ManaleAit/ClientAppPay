@@ -18,6 +18,7 @@ export class AfficherClientsComponent implements OnInit {
   ClientCreate: Client = new Client();
   UpdateSelect:Client=new Client();
   accountCreate:Account=new Account();
+  account1:Account=new Account();
   constructor(private notification:NotificationService,private ServiceClientService: ServiceClientService) {
 
   }
@@ -31,13 +32,10 @@ export class AfficherClientsComponent implements OnInit {
     tel: new FormControl('', Validators.required),
     amount: new FormControl('', Validators.required),
     accountType: new FormControl('', Validators.required),
-    sexe: new FormControl('', Validators.required),
 
   }
   );
-  get sexe() {
-    return this.FormulaireControl.get('sexe');
-  }
+ 
   get amount() {
     return this.FormulaireControl.get('amount');
   }
@@ -63,6 +61,18 @@ export class AfficherClientsComponent implements OnInit {
     return this.FormulaireControl.get('accountType');
   }
   
+  FormulaireCount = new FormGroup({
+    amount2: new FormControl('', Validators.required),
+    id: new FormControl('', Validators.required),
+   
+  }
+  );
+  get amount2() {
+    return this.FormulaireCount.get('amount2');
+  }
+  get id() {
+    return this.FormulaireCount.get('id');
+  }
 
   save() {
     this.UpdateSelect.firstName = this.FormulaireControl.get('firstName').value;
@@ -81,8 +91,8 @@ export class AfficherClientsComponent implements OnInit {
     //this.agencyCreate.name = this.FormulaireControl.get('name').value;
     //pas encore
     //this.ClientCreate.agency = this.agencyCreate;
-      console.log("clientttttttttttt ",  this.ClientCreate);
-     /* this.ServiceClientService.updateClient(this.ClientCreate)
+      console.log("clientttttttttttt ",  this.UpdateSelect);
+     this.ServiceClientService.updateClient(this.UpdateSelect)
       .subscribe(
         (data) => {
           console.log("data ", data);
@@ -98,7 +108,7 @@ export class AfficherClientsComponent implements OnInit {
         error => {      
           console.log("Error", error);
         }
-      );*/
+      );
   }
 
 
@@ -132,7 +142,6 @@ export class AfficherClientsComponent implements OnInit {
       tel: '',
       amount: '',
       accountType: '',
-      sexe:'',
     }
     );
     this.send = false;
@@ -188,4 +197,32 @@ export class AfficherClientsComponent implements OnInit {
     await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => console.log("allow download"));
   }*/
 
+  onSubmitPay(client :Client){
+
+    this.FormulaireCount.get('amount2').setValue(client.account.amount);
+    this.FormulaireCount.get('id').setValue(client.account.id);
+  }
+  pay(){
+    this.account1.id=this.FormulaireCount.get('id').value;
+    this.account1.amount=this.FormulaireCount.get('amount2').value;
+    this.ServiceClientService.accountPay(this.account1)
+    .subscribe(
+      (data) => {
+        console.log("data ", data);
+        if(data!=null){
+        
+
+        this.notification.showSuccess("success", "bien");
+
+      }
+
+
+      },
+      error => {      
+        console.log("Error", error);
+      }
+    );
+    this.FormulaireCount.get('id').setValue('');
+    this.FormulaireCount.get('amount2').setValue('');
+  }
 }
