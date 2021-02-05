@@ -2,10 +2,10 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { AuthRequest } from '../models/AuthRequest';
-
+import {environment} from '../../environments/environment';
 @Injectable()
 export class AuthenticationService   {
-  private baseUrl ='https://ensaspay-zuul-gateway.herokuapp.com/oauth/token'; //'http://localhost:9090/oauth/token';
+  private baseUrl =environment.urlAuth; //'http://localhost:9090/oauth/token';
   token:any;
   isLoggedIn=false;
 
